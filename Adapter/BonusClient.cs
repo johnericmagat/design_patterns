@@ -20,7 +20,7 @@ namespace design_patterns.Adapter
 
 			foreach (EmployeeModel employee in employees)
 			{
-				Console.WriteLine("Congratulations! :" + employee.FullName);
+				Console.WriteLine("Congratulations! " + employee.FullName);
 			}
 		}
 	}
