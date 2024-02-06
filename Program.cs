@@ -3,6 +3,7 @@
 
 using System;
 using design_patterns.Adapter;
+using design_patterns.Observer;
 using design_patterns.Singleton;
 
 //Thread t1 = new Thread(() =>
@@ -23,6 +24,13 @@ using design_patterns.Singleton;
 //t1.Join();
 //t2.Join();
 
-IEmployeeTarget target = new EmployeeAdapter(new EmployeeService());
-BonusClient bonus = new BonusClient(target);
-bonus.ShowEmployees();
+//IEmployeeTarget target = new EmployeeAdapter(new EmployeeService());
+//BonusClient bonus = new BonusClient(target);
+//bonus.ShowEmployees();
+
+var shift = new Shift("101", "08:30AM to 05:30PM");
+var emailNotification = new EmailNotification();
+shift.Subscribe(emailNotification);
+
+shift.UpdateShift("102", "09:00AM to 06:00PM");
+Console.ReadLine();
